@@ -4,7 +4,7 @@
 'use client';
 
 import React from 'react';
-import { MessageOutlined, FileOutlined, SettingOutlined, MenuOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { MenuOutlined, InfoCircleOutlined } from '@ant-design/icons';
 
 interface MainNavigationProps {
   onToggleBuyerList?: () => void;

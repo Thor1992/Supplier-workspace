@@ -24,7 +24,6 @@ export default function Home() {
   // 状态管理各区块宽度
   const [buyerListWidth, setBuyerListWidth] = useState(DEFAULT_BUYER_LIST_WIDTH);
   const [buyerInfoWidth, setBuyerInfoWidth] = useState(DEFAULT_BUYER_INFO_WIDTH);
-  const [, setIsMobile] = useState(false);
   const [showBuyerList, setShowBuyerList] = useState(true);
   const [showBuyerInfo, setShowBuyerInfo] = useState(true);
   
