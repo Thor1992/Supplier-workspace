@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 拖动分隔线相关样式 */
+.resizing-horizontal * {
+  cursor: col-resize !important;
+  user-select: none !important;
+}
+
+.resizing-vertical * {
+  cursor: row-resize !important;
+  user-select: none !important;
+}
+
+/* 拖动时的遮罩层，防止选中文本 */
+.resize-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: transparent;
+}
+
+/* 分隔线悬停效果 */
+.divider-hover-effect {
+  position: relative;
+}
+
+.divider-hover-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+
+.divider-hover-effect:hover::after {
+  background-color: rgba(59, 130, 246, 0.3);
+}
