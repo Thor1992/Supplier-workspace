@@ -60,6 +60,9 @@ export default function ResourceUpload({ onUpload }: ResourceUploadProps) {
 
   // 处理文件选择
   const handleFileSelect = (selectedFiles: FileList | null) => {
+    // 清除之前的错误
+    clearErrors();
+    
     if (!selectedFiles) return;
 
     const newFiles: File[] = [];

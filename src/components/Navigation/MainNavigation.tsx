@@ -4,9 +4,7 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { MessageOutlined, FileOutlined, SettingOutlined, UserOutlined, MenuOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { MessageOutlined, FileOutlined, SettingOutlined, MenuOutlined, InfoCircleOutlined } from '@ant-design/icons';
 
 interface MainNavigationProps {
   onToggleBuyerList?: () => void;
@@ -21,27 +19,6 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
   onToggleBuyerList,
   onToggleBuyerInfo
 }) => {
-  const pathname = usePathname();
-  
-  // 导航项定义
-  const navItems = [
-    {
-      label: 'Chat Workspace',
-      path: '/',
-      icon: <MessageOutlined />
-    },
-    {
-      label: 'Resources',
-      path: '/resources',
-      icon: <FileOutlined />
-    },
-    {
-      label: 'AI Settings',
-      path: '/settings',
-      icon: <SettingOutlined />
-    }
-  ];
-  
   return (
     <nav className="bg-gray-900 border-b border-gray-700 shadow-lg flex justify-between items-center h-16 px-4 z-10">
       {/* Logo和品牌名称 - 左侧 */}

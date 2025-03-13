@@ -9,7 +9,6 @@ import BuyerInfo from '../components/BuyerInfo/BuyerInfo';
 import ResizableDivider from '../components/ResizableDivider/ResizableDivider';
 
 // 默认宽度设置
-const DEFAULT_SIDEBAR_WIDTH = 56; // 侧边导航宽度
 const DEFAULT_BUYER_LIST_WIDTH = 280; // 买家列表宽度
 const DEFAULT_BUYER_INFO_WIDTH = 320; // 买家信息宽度
 const MIN_BUYER_LIST_WIDTH = 240; // 买家列表最小宽度
@@ -25,7 +24,7 @@ export default function Home() {
   // 状态管理各区块宽度
   const [buyerListWidth, setBuyerListWidth] = useState(DEFAULT_BUYER_LIST_WIDTH);
   const [buyerInfoWidth, setBuyerInfoWidth] = useState(DEFAULT_BUYER_INFO_WIDTH);
-  const [isMobile, setIsMobile] = useState(false);
+  const [, setIsMobile] = useState(false);
   const [showBuyerList, setShowBuyerList] = useState(true);
   const [showBuyerInfo, setShowBuyerInfo] = useState(true);
   
@@ -33,7 +32,6 @@ export default function Home() {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setIsMobile(width < 768);
       
       // 在小屏幕上自动调整显示
       if (width < 768) {

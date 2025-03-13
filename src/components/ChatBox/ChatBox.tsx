@@ -6,7 +6,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useAppStore } from '../../shared-core/utils/store';
 import { SendOutlined, PaperClipOutlined, SmileOutlined, RobotOutlined, TagOutlined, DollarOutlined, GlobalOutlined } from '@ant-design/icons';
-import { getLanguageCode } from '../../shared-core/translation/translationService';
 
 /**
  * 聊天框组件

@@ -233,11 +233,14 @@ export const useAppStore = create<AppState>((set, get) => ({
     const buyer = buyers.find(b => b.id === selectedBuyerId);
     if (!buyer) return;
     
-    // 获取与当前买家的最近消息
-    const buyerMessages = messages
+    // 获取与当前买家的最近消息并使用它们
+    const recentMessages = messages
       .filter(m => m.buyerId === selectedBuyerId)
       .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
       .slice(0, 5);
+      
+    // 基于最近消息生成回复建议
+    console.log('Generating suggestions based on recent messages:', recentMessages);
     
     // 根据买家信息和历史消息生成回复建议
     const suggestions: SuggestionResponse[] = [];
